@@ -15,7 +15,8 @@
 			"jdkDistro": "open"
 		}
 	},
-	"postCreateCommand": "cd client && npm install"
+
+	"postCreateCommand": "cd client && npm install",
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -24,7 +25,22 @@
 	// "postCreateCommand": "java -version",
 
 	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"k--kato.intellij-idea-keybindings",
+				"dbaeumer.vscode-eslint",
+				"Angular.ng-template",
+				"esbenp.prettier-vscode",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"shardulm94.trailing-spaces",
+				"lucono.karma-test-explorer",
+				"markis.code-coverage",
+				"ritwickdey.liveserver",
+				"spmeesseman.vscode-taskexplorer"
+			]		
+		}
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
