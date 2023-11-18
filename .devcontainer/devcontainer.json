@@ -13,13 +13,13 @@
 		},
 		"ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {}
-	},
-
-	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
-
-	"containerEnv": {
-		"PATH": "${containerEnv:PATH}:/opt/spring-3.1.5/bin"
 	}
+
+	// "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+
+	// "containerEnv": {
+	// 	"PATH": "${containerEnv:PATH}:/opt/spring-3.1.5/bin"
+	// }
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
