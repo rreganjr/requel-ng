@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { TeamMember, TeamStore } from '../team/team.model'
+import { TeamStore } from './team/team-store.service';
+import { TeamMember } from './team/team.model';
+import { ProjectStore } from './project/project-store.service';
+import { Project } from './project/project.model';
 
 
 @Component({
@@ -9,10 +12,16 @@ import { TeamMember, TeamStore } from '../team/team.model'
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers: [ProjectStore, TeamStore]
 })
 export class AppComponent {
-  projectId:string=""
-  projectName:string = '[Project Name]'
-  team: TeamMember[] = new TeamStore().getTeam(this.projectId)
+  projectId: string = "1"
+  project: Project
+  team: TeamMember[]
+
+  constructor(private projectStore: ProjectStore, private teamStore: TeamStore) {
+    this.project = projectStore.getProject(this.projectId)
+    this.team = teamStore.getTeam(this.projectId)
+  }
 }

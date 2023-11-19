@@ -1,13 +1,14 @@
 <main>
   <section>
-    <h1>{{projectName}}</h1>
-
+    <h1>{{project.name}}</h1>
+    <h2>Vision</h2>
+    <p>{{project.vision}}</p>
   </section>
   <details>
     <summary>
       <h1>Team</h1>
     </summary>
-    <table>
+    <table border="1" style="width: 100%">
       <thead>
         <tr>
           <th>Name</th>
@@ -15,14 +16,30 @@
           <th>Organization</th>
           <th>Contact</th>
           <th>Actions</th>
-          </tr>
+        </tr>
       </thead>
       <tbody>
+        @for (teamMember of team; track teamMember.name) {
+          <tr>
+            <td>{{teamMember.name}}</td>
+            <td>{{teamMember.role}}</td>
+            <td>{{teamMember.organization?.name}}</td>
+            <td>
+              @for (contactInfo of teamMember.contactInfo; track contactInfo.details) {
+                <p><span>{{contactInfo.type}}</span><span>{{contactInfo.details}}</span></p>
+              }
+            </td>
+            <td>actions todo</td>
+          </tr>
+        }
         <tr>
-          <td>Ron Regan</td>
-          <td></td>
+          <td><label>Name:</label><input type="text" name="name"></td>
+          <td><label>Role:</label><input type="text" name="role"></td>
+          <td><label>Organization:</label><input type="text" name="organization"></td>
+          <td>Contact</td>
+          <td><input type="submit" value="Add"></td>
         </tr>
-      </tbody>
+    </tbody>
     </table>
   </details>
 

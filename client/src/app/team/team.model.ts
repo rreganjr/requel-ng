@@ -1,16 +1,16 @@
 
-type ContactInfoType = 'phone'|'email'
+export type ContactInfoType = 'phone'|'email'
 
-class ContactInfo {
+export class ContactInfo {
     type: ContactInfoType = 'email'
     details: string|undefined
 }
 
-class Organization {
+export class Organization {
     name: string|undefined
 }
 
-class TeamMember {
+export class TeamMember {
     name: string|undefined
     role: string|undefined
     organization: Organization|undefined
@@ -31,15 +31,5 @@ class TeamMember {
         return rawData.map<TeamMember>((rawMember:Partial<TeamMember>):TeamMember => {
             return TeamMember.fromRaw(rawMember)
         })
-    }
-}
-
-class TeamStore {
-    private data: TeamMember[] = TeamMember.fromRawArray([
-        {name: 'Ron Regan', role: 'Project Lead', organization: {name: 'Ron Regan Consulting'}, contactInfo: [{type: 'email', details: undefined}]}
-      ])
-
-    public getTeam(projectId: string): TeamMember[] {
-        return this.data
     }
 }

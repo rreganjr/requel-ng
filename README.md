@@ -83,3 +83,14 @@ cd /workspaces/requel-ng/client
 ng new client --prefix re --routing true --skip-git true --directory . --package-manager npm --style css --view-encapsulation None
 ng serve
 ```
+
+Why can't I just add ts files with classes defined in Angular? 
+Does it have to be below the app folder?
+```
+ng g class team/team --type=model --project=client
+ng g class project/project --type=model --project=client
+
+ng g service team/team-store --project=client
+ng g service project/project-store --project=client
+
+```

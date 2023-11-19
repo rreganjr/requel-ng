@@ -1,11 +1,11 @@
 
-class ProjectType {
+export class ProjectType {
     static readonly DEFAULT:ProjectType = {name: "Default"}
 
     name: string|undefined
 }
 
-class Project {
+export class Project {
     id: string|undefined
     type: ProjectType|undefined
     name: string|undefined
@@ -27,16 +27,4 @@ class Project {
             return Project.fromRaw(rawMember)
         })
     }
-}
-
-class ProjectStore {
-    private data: Project[] = Project.fromRawArray([
-        {id: '1', type: ProjectType.DEFAULT, name: 'Sample Project', vision: 'new Requel design'}
-    ])
-
-    public getProject(projectId: string): Project {
-        return this.data.filter((project:Project):boolean => {
-            return project.id === projectId
-        })[0]
-    }    
 }
