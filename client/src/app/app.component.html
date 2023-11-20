@@ -4,43 +4,115 @@
     <h2>Vision</h2>
     <p>{{project.vision}}</p>
   </section>
-  <details>
+  <details id="teamSection">
     <summary>
       <h1>Team</h1>
     </summary>
-    <table border="1" style="width: 100%">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Organization</th>
-          <th>Contact</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (teamMember of team; track teamMember.name) {
+    <div>
+      <table border="1" style="width: 100%">
+        <thead>
           <tr>
-            <td>{{teamMember.name}}</td>
-            <td>{{teamMember.role}}</td>
-            <td>{{teamMember.organization?.name}}</td>
-            <td>
-              @for (contactInfo of teamMember.contactInfo; track contactInfo.details) {
-                <p><span>{{contactInfo.type}}</span><span>{{contactInfo.details}}</span></p>
-              }
-            </td>
-            <td>actions todo</td>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Organization</th>
+            <th>Contact</th>
+            <th>Actions</th>
           </tr>
-        }
-        <tr>
-          <td><label>Name:</label><input type="text" name="name"></td>
-          <td><label>Role:</label><input type="text" name="role"></td>
-          <td><label>Organization:</label><input type="text" name="organization"></td>
-          <td>Contact</td>
-          <td><input type="submit" value="Add"></td>
-        </tr>
-    </tbody>
-    </table>
+        </thead>
+        <tbody>
+          @for (teamMember of team; track teamMember.name) {
+            <tr>
+              <td>{{teamMember.name}}</td>
+              <td>{{teamMember.role}}</td>
+              <td>{{teamMember.organization?.name}}</td>
+              <td>
+                @for (contactInfo of teamMember.contactInfo; track contactInfo.details) {
+                  <p><span>{{contactInfo.type}}</span><span>{{contactInfo.details}}</span></p>
+                }
+              </td>
+              <td>actions todo</td>
+            </tr>
+          }
+          <tr>
+            <td><label>Name:</label><input type="text" name="name"></td>
+            <td><label>Role:</label><input type="text" name="role"></td>
+            <td><label>Organization:</label><input type="text" name="organization"></td>
+            <td>Contact</td>
+            <td><input type="submit" value="Add"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </details>
+  <details id="Schedule">
+    <summary>
+      <h1>Schedule</h1>
+    </summary>
+    <div>
+      <p>What will go here?</p>
+    </div>
+  </details>
+  <details id="Goals">
+    <summary>
+      <h1>Project Scoped: Goals / Qualities (NFR) / Constraints</h1>
+    </summary>
+    <div>
+      <ol><p><span> Goal - </span> this is a functional goal</p></ol>
+      <ol><p><span> Quality: Compatability - </span> Supports browser versions released within the last 12 months for Chrome, Safari, Firefox, Edge on Windows 10 & 11, Linux XX, Apple OS, Andriod, iOS</p></ol>
+      <ol><p><span> Quality: Usability - </span> Supports screen sizes from minimum width-x-height [to maximum widthxheight]?</p></ol>
+      <ol><p><span> Quality: Usability - </span> Supports pointing devices such as mice and track balls, touch screen</p></ol>
+    </div>
+  </details>
+  <details id="Features">
+    <summary>
+      <h1>Features</h1>
+    </summary>
+    <div>
+      <details id="feature_1">
+        <summary>
+          <h1>Feature: UI as a document being edited</h1>
+        </summary>
+        <div>
+          <p>
+            The user interface will work like a wysiwyg editor with colapsible sections like a table of
+            contents, instead of being form and dialog-box oriented. Feedback will be like an editor, 
+            for example if a word seems like it should be in the lexicon, it will be underlined the way
+            a word processor underlines a spelling error. When the user hovers over it a tool tip like
+            interaction will allow the user to add it to the lexicon, or ignore the word.
+          </p>
+        </div>
+      </details>
+      <details id="feature_2">
+        <summary>
+          <h1>Feature: Team Management</h1>
+        </summary>
+        <div>
+          <p>
+            manage team members and permissions via a table interface.
+          </p>
+        </div>
+      </details>
+      <details id="feature_3">
+        <summary>
+          <h1>Feature: Project level Goals, Constraints, Qualities (non-functional requirements)</h1>
+        </summary>
+        <div>
+          <p>
+          </p>
+        </div>
+      </details>
+      <details id="feature_4">
+        <summary>
+          <h1>Feature: Feature definitions</h1>
+        </summary>
+        <div>
+          <p>
+            Detailed definitions for features with a summary or vision, feature specific Goals, qualities,
+            and constraints. Feature use cases, stories and scenarios. Media for mockups, demos, documentation.
+          </p>
+        </div>
+      </details>
 
+    </div>
+  </details>
 </main>
