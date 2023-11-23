@@ -1,8 +1,8 @@
 <main>
   <section>
-    <h1>{{project.name}}</h1>
+    <h1 contenteditable="true">{{project.name}}</h1>
     <h2>Vision</h2>
-    <p>{{project.vision}}</p>
+    <p contenteditable="true">{{project.vision}}</p>
   </section>
   <details id="teamSection">
     <summary>
@@ -22,22 +22,22 @@
         <tbody>
           @for (teamMember of team; track teamMember.name) {
             <tr>
-              <td>{{teamMember.name}}</td>
+              <td contenteditable="true">{{teamMember.name}}</td>
               <td>{{teamMember.role}}</td>
               <td>{{teamMember.organization?.name}}</td>
               <td>
                 @for (contactInfo of teamMember.contactInfo; track contactInfo.details) {
-                  <p><span>{{contactInfo.type}}</span><span>{{contactInfo.details}}</span></p>
+                  <p><span>{{contactInfo.type}}</span><span contenteditable="true">{{contactInfo.details}}</span></p>
                 }
               </td>
               <td>actions todo</td>
             </tr>
           }
           <tr>
-            <td><label>Name:</label><input type="text" name="name"></td>
-            <td><label>Role:</label><input type="text" name="role"></td>
-            <td><label>Organization:</label><input type="text" name="organization"></td>
-            <td>Contact</td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
             <td><input type="submit" value="Add"></td>
           </tr>
         </tbody>
@@ -46,7 +46,7 @@
   </details>
   <details id="Schedule">
     <summary>
-      <h1>Schedule</h1>
+      <h1>Schedule / Tasks</h1>
     </summary>
     <div>
       <p>What will go here?</p>
@@ -56,57 +56,92 @@
     <summary>
       <h1>Project Scoped: Goals / Qualities (NFR) / Constraints</h1>
     </summary>
-    <div>
-      <ol><p><span> Goal - </span> this is a functional goal</p></ol>
-      <ol><p><span> Quality: Compatability - </span> Supports browser versions released within the last 12 months for Chrome, Safari, Firefox, Edge on Windows 10 & 11, Linux XX, Apple OS, Andriod, iOS</p></ol>
-      <ol><p><span> Quality: Usability - </span> Supports screen sizes from minimum width-x-height [to maximum widthxheight]?</p></ol>
-      <ol><p><span> Quality: Usability - </span> Supports pointing devices such as mice and track balls, touch screen</p></ol>
-    </div>
+    <ol>
+      <li><p contenteditable="true"><span contenteditable="false"> Goal - </span> this is a functional goal</p></li>
+      <li><p contenteditable="true"><span contenteditable="false"> Quality: Compatability - </span> Supports browser versions released within the last 12 months for Chrome, Safari, Firefox, Edge on Windows 10 & 11, Linux XX, Apple OS, Andriod, iOS</p></li>
+      <li><p contenteditable="true"><span contenteditable="false"> Quality: Usability - </span> Supports screen sizes from minimum width-x-height [to maximum widthxheight]?</p></li>
+      <li><p contenteditable="true"><span contenteditable="false"> Quality: Usability - </span> Supports pointing devices such as mice and track balls, touch screen</p></li>
+      <li><p contenteditable="true"><span contenteditable="false"> New - </span> </p></li>
+    </ol>
   </details>
   <details id="Features">
     <summary>
       <h1>Features</h1>
     </summary>
-    <div>
+    <div class="feature_details">
       <details id="feature_1">
         <summary>
-          <h1>Feature: UI as a document being edited</h1>
+          <h2 contenteditable="true">Feature: UI as a document being edited</h2>
         </summary>
-        <div>
-          <p>
-            The user interface will work like a wysiwyg editor with colapsible sections like a table of
-            contents, instead of being form and dialog-box oriented. Feedback will be like an editor, 
-            for example if a word seems like it should be in the lexicon, it will be underlined the way
-            a word processor underlines a spelling error. When the user hovers over it a tool tip like
-            interaction will allow the user to add it to the lexicon, or ignore the word.
-          </p>
+        <div class="feature_details">
+          <details id="feature_1_description">
+            <summary>
+              <h2>Description</h2>
+            </summary>
+            <p contenteditable="true">
+              The user interface will work like a wysiwyg editor with colapsible sections like a table of
+              contents, instead of being form and dialog-box oriented. Feedback will be like an editor, 
+              for example if a word seems like it should be in the lexicon, it will be underlined the way
+              a word processor underlines a spelling error. When the user hovers over it a tool tip like
+              interaction will allow the user to add it to the lexicon, or ignore the word.
+            </p>
+          </details>
+          <details id="feature_1_goals">
+            <summary>
+              <h2>Feature: Goals / Qualities (NFR) / Constraints</h2>
+            </summary>
+            <ol>
+              <li>
+                <p contenteditable="true"><span contenteditable="false"> Function Goal - </span>
+                User can tab through editable fields, skipping over hidden (colapsed) content.
+                </p>
+              </li>
+              <li>
+                <p contenteditable="true"><span contenteditable="false"> Function Goal - </span>
+                  Changes are saved as a user types.
+                </p>
+              </li>
+              <li>
+                <p contenteditable="true"><span contenteditable="false"> Function Goal - </span>
+                The user can easily undo/redo changes within the context of the field they are editing. The user can navigate
+                to a different field and undo/redo changes specific to that field.
+                </p>
+              </li>
+              <li><p contenteditable="true"><span contenteditable="false"> Quality: Usability - </span>
+                  Editable content is easily identifiable
+              </p></li>
+              <li><p contenteditable="true"><span contenteditable="false"> New - </span> </p></li>
+            </ol>        
+          </details>
         </div>
       </details>
       <details id="feature_2">
         <summary>
-          <h1>Feature: Team Management</h1>
+          <h2 contenteditable="true">Feature: Team Management</h2>
         </summary>
-        <div>
-          <p>
+        <div class="feature_description">
+          <h2>Description</h2>
+          <p contenteditable="true">
             manage team members and permissions via a table interface.
           </p>
         </div>
       </details>
       <details id="feature_3">
         <summary>
-          <h1>Feature: Project level Goals, Constraints, Qualities (non-functional requirements)</h1>
+          <h2 contenteditable="true">Feature: Project level Goals, Constraints, Qualities (non-functional requirements)</h2>
         </summary>
-        <div>
-          <p>
+        <div class="feature_description">
+          <h2>Description</h2>
+          <p contenteditable="true">
           </p>
         </div>
       </details>
       <details id="feature_4">
         <summary>
-          <h1>Feature: Feature definitions</h1>
+          <h2 contenteditable="true">Feature: Feature definitions</h2>
         </summary>
-        <div>
-          <p>
+        <div class="feature_description">
+          <p contenteditable="true">
             Detailed definitions for features with a summary or vision, feature specific Goals, qualities,
             and constraints. Feature use cases, stories and scenarios. Media for mockups, demos, documentation.
           </p>

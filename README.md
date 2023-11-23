@@ -94,3 +94,12 @@ ng g service team/team-store --project=client
 ng g service project/project-store --project=client
 
 ```
+# Use html property contenteditable to make elements editable
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable
+
+https://www.scottohara.me/blog/2014/05/08/contenteditable.html
+
+use Angular forms with contenteditable elements 
+(https://github.com/Tinkoff/angular-contenteditable-accessor/tree/master)[Tinkoff/angular-contenteditable-accessor]
+https://medium.com/its-tinkoff/controlvalueaccessor-and-contenteditable-in-angular-6ebf50b7475e

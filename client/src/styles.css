@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+details summary h1 {
+    display: inline-block;
+}
+details summary h2 {
+    display: inline-block;
+}
+
+details {
+    padding: 10pt;
+    margin: 10pt;
+}
+
+details.feature_description p {
+    padding: 10pt;
+}
+
+details div.feature_details {
+    padding: 10pt;
+    margin: 10pt;
+}
+
+details[open] {
+    border: solid black 1px;
+    border-radius: 10pt;
+}
+
+p[contenteditable]:focus {
+    outline: none;
+    background-color: lightcyan;
+}
