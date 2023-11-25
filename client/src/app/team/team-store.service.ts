@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TeamMember } from './team.model';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class TeamStore {
     ])
   }
 
-  public getTeam(projectId: string): TeamMember[] {
-      return this.data
+  public getTeam(projectId: string): Observable<TeamMember[]> {
+      return of(this.data)
   }
 }

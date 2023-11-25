@@ -8,7 +8,7 @@ export class ProjectStore {
   private data: Project[]
   constructor() {
     this.data = Project.fromRawArray([
-      {id: '1', type: ProjectType.DEFAULT, name: 'Sample Project', vision: 'new Requel design'}
+      {id: 'project-1', type: ProjectType.DEFAULT, name: 'Sample Project', vision: 'new Requel design'}
     ])
 
   }

@@ -1,0 +1,33 @@
+<table border="1" style="width: 100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Organization</th>
+        <th>Contact</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (teamMember of team$ | async; track teamMember.name) {
+        <tr>
+          <td contenteditable="true">{{teamMember.name}}</td>
+          <td>{{teamMember.role}}</td>
+          <td>{{teamMember.organization?.name}}</td>
+          <td>
+            @for (contactInfo of teamMember.contactInfo; track contactInfo.details) {
+              <p><span>{{contactInfo.type}}</span><span contenteditable="true">{{contactInfo.details}}</span></p>
+            }
+          </td>
+          <td>actions todo</td>
+        </tr>
+      }
+      <tr>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td><input type="submit" value="Add"></td>
+      </tr>
+    </tbody>
+  </table>

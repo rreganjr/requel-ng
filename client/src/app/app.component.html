@@ -9,39 +9,7 @@
       <h1>Team</h1>
     </summary>
     <div>
-      <table border="1" style="width: 100%">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Organization</th>
-            <th>Contact</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (teamMember of team; track teamMember.name) {
-            <tr>
-              <td contenteditable="true">{{teamMember.name}}</td>
-              <td>{{teamMember.role}}</td>
-              <td>{{teamMember.organization?.name}}</td>
-              <td>
-                @for (contactInfo of teamMember.contactInfo; track contactInfo.details) {
-                  <p><span>{{contactInfo.type}}</span><span contenteditable="true">{{contactInfo.details}}</span></p>
-                }
-              </td>
-              <td>actions todo</td>
-            </tr>
-          }
-          <tr>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td><input type="submit" value="Add"></td>
-          </tr>
-        </tbody>
-      </table>
+      <req-team-table [groupId]="projectId"></req-team-table>
     </div>
   </details>
   <details id="Schedule">
@@ -56,98 +24,12 @@
     <summary>
       <h1>Project Scoped: Goals / Qualities (NFR) / Constraints</h1>
     </summary>
-    <ol>
-      <li><p contenteditable="true"><span contenteditable="false"> Goal - </span> this is a functional goal</p></li>
-      <li><p contenteditable="true"><span contenteditable="false"> Quality: Compatability - </span> Supports browser versions released within the last 12 months for Chrome, Safari, Firefox, Edge on Windows 10 & 11, Linux XX, Apple OS, Andriod, iOS</p></li>
-      <li><p contenteditable="true"><span contenteditable="false"> Quality: Usability - </span> Supports screen sizes from minimum width-x-height [to maximum widthxheight]?</p></li>
-      <li><p contenteditable="true"><span contenteditable="false"> Quality: Usability - </span> Supports pointing devices such as mice and track balls, touch screen</p></li>
-      <li><p contenteditable="true"><span contenteditable="false"> New - </span> </p></li>
-    </ol>
+    <req-goal-list [groupId]="projectId"></req-goal-list>
   </details>
   <details id="Features">
     <summary>
       <h1>Features</h1>
     </summary>
-    <div class="feature_details">
-      <details id="feature_1">
-        <summary>
-          <h2 contenteditable="true">Feature: UI as a document being edited</h2>
-        </summary>
-        <div class="feature_details">
-          <details id="feature_1_description">
-            <summary>
-              <h2>Description</h2>
-            </summary>
-            <p contenteditable="true">
-              The user interface will work like a wysiwyg editor with colapsible sections like a table of
-              contents, instead of being form and dialog-box oriented. Feedback will be like an editor, 
-              for example if a word seems like it should be in the lexicon, it will be underlined the way
-              a word processor underlines a spelling error. When the user hovers over it a tool tip like
-              interaction will allow the user to add it to the lexicon, or ignore the word.
-            </p>
-          </details>
-          <details id="feature_1_goals">
-            <summary>
-              <h2>Feature: Goals / Qualities (NFR) / Constraints</h2>
-            </summary>
-            <ol>
-              <li>
-                <p contenteditable="true"><span contenteditable="false"> Function Goal - </span>
-                User can tab through editable fields, skipping over hidden (colapsed) content.
-                </p>
-              </li>
-              <li>
-                <p contenteditable="true"><span contenteditable="false"> Function Goal - </span>
-                  Changes are saved as a user types.
-                </p>
-              </li>
-              <li>
-                <p contenteditable="true"><span contenteditable="false"> Function Goal - </span>
-                The user can easily undo/redo changes within the context of the field they are editing. The user can navigate
-                to a different field and undo/redo changes specific to that field.
-                </p>
-              </li>
-              <li><p contenteditable="true"><span contenteditable="false"> Quality: Usability - </span>
-                  Editable content is easily identifiable
-              </p></li>
-              <li><p contenteditable="true"><span contenteditable="false"> New - </span> </p></li>
-            </ol>        
-          </details>
-        </div>
-      </details>
-      <details id="feature_2">
-        <summary>
-          <h2 contenteditable="true">Feature: Team Management</h2>
-        </summary>
-        <div class="feature_description">
-          <h2>Description</h2>
-          <p contenteditable="true">
-            manage team members and permissions via a table interface.
-          </p>
-        </div>
-      </details>
-      <details id="feature_3">
-        <summary>
-          <h2 contenteditable="true">Feature: Project level Goals, Constraints, Qualities (non-functional requirements)</h2>
-        </summary>
-        <div class="feature_description">
-          <h2>Description</h2>
-          <p contenteditable="true">
-          </p>
-        </div>
-      </details>
-      <details id="feature_4">
-        <summary>
-          <h2 contenteditable="true">Feature: Feature definitions</h2>
-        </summary>
-        <div class="feature_description">
-          <p contenteditable="true">
-            Detailed definitions for features with a summary or vision, feature specific Goals, qualities,
-            and constraints. Feature use cases, stories and scenarios. Media for mockups, demos, documentation.
-          </p>
-        </div>
-      </details>
-
-    </div>
+    <req-feature-list [groupId]="projectId"></req-feature-list>
   </details>
 </main>

@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+
 details summary h1 {
     display: inline-block;
 }
@@ -25,7 +27,18 @@ details[open] {
     border-radius: 10pt;
 }
 
-p[contenteditable]:focus {
-    outline: none;
+/* current tab location */
+*:focus {
+    outline: dotted lightgrey;
+    background-color: bisque;
+}
+
+/* editable content */
+.editable:focus {
+    background-color: plum;
+}
+
+/* typeable sections */
+*[contenteditable="true"]:focus {
     background-color: lightcyan;
 }

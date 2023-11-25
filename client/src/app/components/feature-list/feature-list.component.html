@@ -1,0 +1,5 @@
+<div class="feature_details">
+    @for (feature of features$ | async; track feature.id) {
+        <req-feature-detail [groupId]="groupId" [feature]="feature"></req-feature-detail>
+    }
+</div>

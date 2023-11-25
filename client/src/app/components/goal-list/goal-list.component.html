@@ -1,0 +1,7 @@
+<ol>
+    @for (goal of this.goals$ | async; track goal.id) {
+        <li><div><span class="editable" tabindex="0"> {{goal.goalCategory.label}} - </span><span contenteditable="true">{{goal.text}}</span></div></li>
+    }
+    <li><div><span class="editable" tabindex="0"> [select category] - </span><span contenteditable="true"></span></div></li>
+</ol>
+

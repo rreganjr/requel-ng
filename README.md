@@ -93,6 +93,19 @@ ng g class project/project --type=model --project=client
 ng g service team/team-store --project=client
 ng g service project/project-store --project=client
 
+ng g class goal/goal --type=model --project=client
+ng g service goal/goal-store --project=client
+
+ng g class feature/feature --type=model --project=client
+ng g service feature/feature-store --project=client
+
+ng g component components/goal-list --project=client
+
+ng g component components/team-table --project=client
+
+ng g component components/feature-list --project=client
+ng g component components/feature-detail --project=client
+
 ```
 # Use html property contenteditable to make elements editable
 
