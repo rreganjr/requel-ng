@@ -1,8 +1,8 @@
 <main>
   <section>
-    <h1 contenteditable="true">{{project.name}}</h1>
+    <h1 [(ngModel)]="project.name" contenteditable="true"></h1>
     <h2>Vision</h2>
-    <p contenteditable="true">{{project.vision}}</p>
+    <p [(ngModel)]="project.vision" contenteditable="true"></p>
   </section>
   <details id="teamSection">
     <summary>
