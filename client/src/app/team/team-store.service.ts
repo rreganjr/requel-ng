@@ -11,7 +11,7 @@ export class TeamStore {
 
   constructor() {
     this.data = TeamMember.fromRawArray([
-      {name: 'Ron Regan', role: 'Project Lead', organization: {name: 'Ron Regan Consulting'}, contactInfo: [{type: 'email', details: undefined}]}
+      {name: 'Ron Regan', role: 'dork', organization: {id: 'rreganjr', name: 'Ron Regan Consulting'}, contactInfo: [{type: 'email', details: undefined}]}
     ])
   }
 

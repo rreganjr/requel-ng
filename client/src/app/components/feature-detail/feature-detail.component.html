@@ -1,14 +1,13 @@
 <details [id]="feature.id">
     <summary>
-      <h2>Feature: <span contenteditable="true">{{feature.name}}</span></h2>
+      <h2>Feature: <span [(ngModel)]="feature.name" contenteditable="true"></span></h2>
     </summary>
     <div class="feature_details">
       <details [id]="feature.id"> 
         <summary>
           <h2>Description</h2>
         </summary>
-        <p contenteditable="true">
-          {{feature.description}}
+        <p [(ngModel)]="feature.name" contenteditable="true">
         </p>
       </details>
       <details id="feature_1_goals">

@@ -7,6 +7,7 @@ export class ContactInfo {
 }
 
 export class Organization {
+    id: string|undefined
     name: string|undefined
 }
 

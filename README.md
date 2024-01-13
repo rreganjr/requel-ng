@@ -106,6 +106,9 @@ ng g component components/team-table --project=client
 ng g component components/feature-list --project=client
 ng g component components/feature-detail --project=client
 
+ng g component components/team-role-selector --project=client
+ng g component components/organization-selector --project=client
+
 ```
 # Use html property contenteditable to make elements editable
 

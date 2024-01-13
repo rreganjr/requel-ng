@@ -11,21 +11,21 @@
     <tbody>
       @for (teamMember of team$ | async; track teamMember.name) {
         <tr>
-          <td contenteditable="true">{{teamMember.name}}</td>
-          <td>{{teamMember.role}}</td>
-          <td>{{teamMember.organization?.name}}</td>
+          <td [(ngModel)]="teamMember.name" contenteditable="true"></td>
+          <td><req-team-role-selector [teamMember]="teamMember"></req-team-role-selector></td>
+          <td><req-organization-selector [teamMember]="teamMember"></req-organization-selector></td>
           <td>
             @for (contactInfo of teamMember.contactInfo; track contactInfo.details) {
-              <p><span>{{contactInfo.type}}</span><span contenteditable="true">{{contactInfo.details}}</span></p>
+              <p><span>{{contactInfo.type}}</span><span [(ngModel)]="contactInfo.details" contenteditable="true"></span></p>
             }
           </td>
           <td>actions todo</td>
         </tr>
       }
       <tr>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td [(ngModel)]="newTeamMember.name" contenteditable="true"></td>
+        <td><req-team-role-selector [teamMember]="newTeamMember"></req-team-role-selector></td>
+        <td><req-organization-selector [teamMember]="newTeamMember"></req-organization-selector></td>
         <td contenteditable="true"></td>
         <td><input type="submit" value="Add"></td>
       </tr>
